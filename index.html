@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flagler on the River — Luxury Apartments in Downtown Miami</title>
+<meta name="description" content="Flagler on the River offers luxury rental apartments with spectacular Miami River, Downtown, and Biscayne Bay views. 1, 2 & 3 bedroom residences at 340 West Flagler Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{midnight:{DEFAULT:'#0c1520',light:'#131f2e'},gold:{DEFAULT:'#c9a96e',light:'#d4bb8a'},surface:'#111b2e'},fontFamily:{display:['Cormorant Garamond','serif'],body:['DM Sans','sans-serif']},maxWidth:{site:'1200px'}}}}
+</script>
+<style>
+body{font-family:'DM Sans',sans-serif;background:#0c1520}
+.font-display{font-family:'Cormorant Garamond',serif}
+header{transition:all .4s;padding-top:1.25rem;padding-bottom:1.25rem}
+header.scrolled{padding-top:.75rem;padding-bottom:.75rem;background:rgba(12,21,32,.97);backdrop-filter:blur(16px);box-shadow:0 4px 24px rgba(0,0,0,.3)}
+.animate-in{opacity:1;transform:translateY(0)}
+.js-animate .animate-in{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.js-animate .animate-in.visible{opacity:1;transform:translateY(0)}
+.js-animate .animate-in.delay-1{transition-delay:.1s}
+.js-animate .animate-in.delay-2{transition-delay:.2s}
+.js-animate .animate-in.delay-3{transition-delay:.3s}
+.js-animate .animate-in.delay-4{transition-delay:.4s}
+.hero-overlay{background:linear-gradient(135deg,rgba(12,21,32,.9) 0%,rgba(12,21,32,.5) 50%,rgba(12,21,32,.75) 100%)}
+.card-hover{transition:transform .4s,box-shadow .4s}
+.card-hover:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(201,169,110,.12)}
+.gold-line{width:60px;height:2px;background:linear-gradient(90deg,#c9a96e,#d4bb8a)}
+.gallery-item{overflow:hidden;border-radius:12px}
+.gallery-item img{transition:transform .6s;width:100%;height:100%;object-fit:cover}
+.gallery-item:hover img{transform:scale(1.05)}
+.lightbox{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);align-items:center;justify-content:center;cursor:pointer}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px}
+.amenity-card{background:rgba(26,42,74,.5);border:1px solid rgba(201,169,110,.1);border-radius:16px}
+.mobile-menu{display:none}.mobile-menu.open{display:block}
+@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,169,110,.4)}70%{box-shadow:0 0 0 12px rgba(201,169,110,0)}}
+.pulse-cta{animation:pulse-gold 2s infinite}
+@media(max-width:768px){.mobile-phone-bar{display:flex!important}}
+</style>
+</head>
+<body class="text-gray-300">
+<header id="header" class="fixed top-0 w-full z-50 bg-midnight/80 backdrop-blur-sm">
+  <div class="max-w-site mx-auto px-6 flex items-center justify-between">
+    <a href="#home"><img src="images/logo.png" alt="Flagler on the River" class="h-7 md:h-9"></a>
+    <div class="hidden md:flex flex-col items-end">
+      <a href="tel:3053291111" class="text-gold text-sm tracking-wider font-bold">(305) 329-1111</a>
+      <a href="mailto:info@flaglerontheriver.com" class="text-gray-400 text-xs tracking-wider hover:text-gold transition">info@flaglerontheriver.com</a>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm tracking-wide">
+      <a href="#about" class="text-white/90 hover:text-gold transition">About</a>
+      <a href="#views" class="text-white/90 hover:text-gold transition">Views</a>
+      <a href="#amenities" class="text-white/90 hover:text-gold transition">Amenities</a>
+      <a href="#floorplans" class="text-white/90 hover:text-gold transition">Floor Plans</a>
+      <a href="#location" class="text-white/90 hover:text-gold transition">Location</a>
+      <a href="#contact" class="text-white/90 hover:text-gold transition">Contact</a>
+      <a href="brochure.pdf" target="_blank" class="px-5 py-2 border border-gold text-gold hover:bg-gold hover:text-midnight rounded-full transition text-sm font-semibold">Brochure</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu md:hidden bg-midnight/95 backdrop-blur-md mx-4 mt-2 rounded-xl p-6 space-y-4 text-center">
+    <a href="#about" class="block text-white/90 hover:text-gold py-2">About</a>
+    <a href="#views" class="block text-white/90 hover:text-gold py-2">Views</a>
+    <a href="#amenities" class="block text-white/90 hover:text-gold py-2">Amenities</a>
+    <a href="#floorplans" class="block text-white/90 hover:text-gold py-2">Floor Plans</a>
+    <a href="#location" class="block text-white/90 hover:text-gold py-2">Location</a>
+    <a href="#contact" class="block text-white/90 hover:text-gold py-2">Contact</a>
+    <a href="brochure.pdf" target="_blank" class="block text-gold font-semibold py-2">Download Brochure</a>
+    <div class="border-t border-white/10 pt-4"><a href="tel:3053291111" class="block text-gold font-bold tracking-wider">(305) 329-1111</a></div>
+  </div>
+</header>
+
+<section id="home" class="relative min-h-screen flex flex-col overflow-hidden">
+  <img src="images/hero.jpg" alt="Flagler on the River" class="absolute inset-0 w-full h-full object-cover" style="object-position:center 40%">
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="max-w-site mx-auto px-6 relative z-20 w-full flex-1 flex items-center pt-24">
+    <div class="max-w-xl">
+      <div class="gold-line mb-6 animate-in"></div>
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-in delay-1">Riverfront Living in the Heart of Miami</h1>
+      <p class="text-xl text-gray-300 font-light mb-4 animate-in delay-2">Luxury apartments with spectacular Miami River, Downtown skyline, and Biscayne Bay views — steps from everything the city has to offer.</p>
+      <a href="tel:3053291111" class="text-gold text-2xl tracking-wider font-bold block mb-8 text-center animate-in delay-3">(305) 329-1111</a>
+      <div class="flex flex-col sm:flex-row gap-4 items-center animate-in delay-4">
+        <a href="#contact" class="px-8 py-3.5 bg-gold text-midnight font-semibold rounded-full hover:bg-gold-light transition text-center pulse-cta">Schedule a Tour</a>
+        <a href="#views" class="px-8 py-3.5 border border-white/20 text-white rounded-full hover:border-gold hover:text-gold transition text-center">Explore Views</a>
+      </div>
+    </div>
+  </div>
+  <div class="hidden md:block absolute bottom-0 right-[8%] z-10 pointer-events-none" style="line-height:0">
+    <img src="images/building.jpg" alt="Flagler on the River Building" class="h-[70vh] max-h-[600px] drop-shadow-2xl" style="display:block">
+  </div>
+</section>
+
+<section id="about" class="py-24 px-6">
+  <div class="max-w-site mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="animate-in">
+      <div class="gold-line mb-6"></div>
+      <p class="text-gold font-display italic text-lg mb-2">Downtown Miami</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Your Miami Urban<br>Experience Awaits</h2>
+      <p class="text-gray-400 leading-relaxed text-lg mb-6">Flagler on the River is an exceptional Downtown property along the Miami River that promises to make your urban living experience unforgettable. Enjoy spectacular views of the river, Downtown skyline, and Biscayne Bay from every residence.</p>
+      <p class="text-gray-400 leading-relaxed text-lg mb-8">Located at 340 West Flagler Street, you're within walking distance to Government Center, Metrorail, major banks, law firms, and the vibrant energy of Downtown Miami — with direct access to the river walk.</p>
+      <div class="grid grid-cols-3 gap-6">
+        <div class="text-center"><p class="font-display text-3xl md:text-4xl font-bold text-gold">3</p><p class="text-gray-500 text-sm mt-1">Floor Plans</p></div>
+        <div class="text-center"><p class="font-display text-3xl md:text-4xl font-bold text-gold">River</p><p class="text-gray-500 text-sm mt-1">Walk Access</p></div>
+        <div class="text-center"><p class="font-display text-3xl md:text-4xl font-bold text-gold">5</p><p class="text-gray-500 text-sm mt-1">Min to Brickell</p></div>
+      </div>
+    </div>
+    <div class="animate-in delay-2">
+      <img src="images/view-river-1.jpg" alt="Miami River View" class="rounded-xl shadow-2xl w-full">
+    </div>
+  </div>
+</section>
+
+<section id="views" class="py-24 px-6 bg-surface/50">
+  <div class="max-w-site mx-auto">
+    <div class="text-center mb-16 animate-in">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="text-gold font-display italic text-lg mb-2">Panoramic</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Spectacular Views</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Every residence offers breathtaking vistas of the Miami River, Downtown skyline, Brickell, and Biscayne Bay.</p>
+    </div>
+    <div class="space-y-6">
+      <div class="gallery-item relative z-10 cursor-pointer animate-in delay-1">
+        <div class="relative h-48 md:h-72 rounded-xl overflow-hidden"><img src="images/view-river-1.jpg" alt="River View West">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 pointer-events-none"><p class="text-gold font-display text-lg font-semibold">Miami River — West View</p></div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="gallery-item relative z-10 cursor-pointer animate-in delay-2">
+          <div class="relative h-48 md:h-64 rounded-xl overflow-hidden"><img src="images/view-downtown.jpg" alt="Downtown View">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 pointer-events-none"><p class="text-gold font-display text-lg font-semibold">Downtown Miami Skyline</p></div>
+          </div>
+        </div>
+        <div class="gallery-item relative z-10 cursor-pointer animate-in delay-3">
+          <div class="relative h-48 md:h-64 rounded-xl overflow-hidden"><img src="images/view-brickell.jpg" alt="Brickell View">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 pointer-events-none"><p class="text-gold font-display text-lg font-semibold">Brickell Financial District</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item relative z-10 cursor-pointer animate-in delay-2">
+        <div class="relative h-48 md:h-64 rounded-xl overflow-hidden"><img src="images/view-downtown-north.jpg" alt="Downtown North">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 pointer-events-none"><p class="text-gold font-display text-lg font-semibold">Downtown North — Toward Edgewater</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities" class="py-24 px-6">
+  <div class="max-w-site mx-auto">
+    <div class="text-center mb-16 animate-in">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="text-gold font-display italic text-lg mb-2">Lifestyle</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Premium Amenities</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Everything you need to live well, right at home.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="amenity-card card-hover p-6 animate-in delay-1">
+        <img src="images/pool.jpg" alt="Pool" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-white font-semibold text-lg mb-2">Riverfront Pool Deck</h3>
+        <p class="text-gray-400 text-sm">Spectacular views of the Miami River and city as you relax on the large pool deck. Swim and soak up the sun with Downtown as your backdrop.</p>
+      </div>
+      <div class="amenity-card card-hover p-6 animate-in delay-2">
+        <img src="images/gym.jpg" alt="Fitness Center" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-white font-semibold text-lg mb-2">Fitness Center</h3>
+        <p class="text-gray-400 text-sm">State-of-the-art equipment with strength, cardio, and aerobics options. Your personal gym without ever leaving home.</p>
+      </div>
+      <div class="amenity-card card-hover p-6 animate-in delay-3">
+        <img src="images/sauna.jpg" alt="Sauna" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-white font-semibold text-lg mb-2">Relaxing Pool Deck</h3>
+        <p class="text-gray-400 text-sm">Enjoy a relaxing deck to soak up the warm Florida sun and work on your tan with tranquil poolside reading.</p>
+      </div>
+      <div class="amenity-card card-hover p-6 animate-in delay-1">
+        <img src="images/social-room.jpg" alt="Social Room" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-white font-semibold text-lg mb-2">Social & Recreation Room</h3>
+        <p class="text-gray-400 text-sm">An exclusive residents' lounge for entertaining, music, and television — an extension of your living space.</p>
+      </div>
+      <div class="amenity-card card-hover p-6 animate-in delay-2">
+        <img src="images/parking.jpg" alt="Parking" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-white font-semibold text-lg mb-2">Secure Covered Parking</h3>
+        <p class="text-gray-400 text-sm">Private parking garage keeps your vehicle protected from the elements. Always a spot waiting for you.</p>
+      </div>
+      <div class="amenity-card card-hover p-6 flex flex-col items-center justify-center text-center animate-in delay-3">
+        <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mb-4"><i class="fa-solid fa-water text-gold text-2xl"></i></div>
+        <h3 class="text-white font-semibold text-lg mb-2">River Walk Access</h3>
+        <p class="text-gray-400 text-sm">Direct access to the Miami River Walk connects you to city life, dining, and waterfront entertainment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="floorplans" class="py-24 px-6 bg-surface/50">
+  <div class="max-w-site mx-auto">
+    <div class="text-center mb-16 animate-in">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="text-gold font-display italic text-lg mb-2">Residences</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Floor Plans</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">1, 2, and 3 bedroom layouts with spectacular views of the river, Downtown, and Biscayne Bay</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="amenity-card card-hover p-5 text-center animate-in delay-1 cursor-pointer">
+        <img src="images/fp-units-1-8.jpg" alt="Units 1 & 8" class="w-full rounded-lg mb-4 lb-click">
+        <p class="text-gold font-display text-lg font-semibold">Units 1 & 8</p>
+        <p class="text-gray-500 text-xs mt-1">Click to enlarge</p>
+      </div>
+      <div class="amenity-card card-hover p-5 text-center animate-in delay-2 cursor-pointer">
+        <img src="images/fp-units-3-4.jpg" alt="Units 3 & 4" class="w-full rounded-lg mb-4 lb-click">
+        <p class="text-gold font-display text-lg font-semibold">Units 3 & 4</p>
+        <p class="text-gray-500 text-xs mt-1">Click to enlarge</p>
+      </div>
+      <div class="amenity-card card-hover p-5 text-center animate-in delay-3 cursor-pointer">
+        <img src="images/fp-units-3-6.jpg" alt="Units 3-6" class="w-full rounded-lg mb-4 lb-click">
+        <p class="text-gold font-display text-lg font-semibold">Units 3–6</p>
+        <p class="text-gray-500 text-xs mt-1">Click to enlarge</p>
+      </div>
+      <div class="amenity-card card-hover p-5 text-center animate-in delay-4 cursor-pointer">
+        <img src="images/fp-units-9-10.jpg" alt="Units 9 & 10" class="w-full rounded-lg mb-4 lb-click">
+        <p class="text-gold font-display text-lg font-semibold">Units 9 & 10</p>
+        <p class="text-gray-500 text-xs mt-1">Click to enlarge</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="py-24 px-6">
+  <div class="max-w-site mx-auto">
+    <div class="text-center mb-16 animate-in">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="text-gold font-display italic text-lg mb-2">Prime Location</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Live, Work & Play in Downtown</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto text-lg">Walking distance to Government Center, Metrorail, major banks, and law firms. Direct river walk access connects you to the best of Miami.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="animate-in">
+        <div class="rounded-xl overflow-hidden border border-gold/10 shadow-2xl">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.8!2d-80.2005!3d25.7745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6994b3e5b9d%3A0x1!2s340+W+Flagler+St%2C+Miami%2C+FL+33130!5e0!3m2!1sen!2sus!4v1" width="100%" height="450" style="border:0" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="animate-in delay-2 space-y-5">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-1"><i class="fa-solid fa-location-dot text-gold text-sm"></i></div>
+          <div><p class="text-white font-semibold text-lg">340 West Flagler Street</p><p class="text-gray-400">Miami, FL 33130 — Downtown</p></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="amenity-card p-5 text-center card-hover"><i class="fa-solid fa-building-columns text-gold text-2xl mb-3"></i><p class="text-white text-sm font-semibold">Government Center</p><p class="text-gray-500 text-xs mt-1">Walking distance</p></div>
+          <div class="amenity-card p-5 text-center card-hover"><i class="fa-solid fa-train text-gold text-2xl mb-3"></i><p class="text-white text-sm font-semibold">Metrorail Station</p><p class="text-gray-500 text-xs mt-1">Walking distance</p></div>
+          <div class="amenity-card p-5 text-center card-hover"><i class="fa-solid fa-city text-gold text-2xl mb-3"></i><p class="text-white text-sm font-semibold">Brickell</p><p class="text-gray-500 text-xs mt-1">5 min drive</p></div>
+          <div class="amenity-card p-5 text-center card-hover"><i class="fa-solid fa-umbrella-beach text-gold text-2xl mb-3"></i><p class="text-white text-sm font-semibold">South Beach</p><p class="text-gray-500 text-xs mt-1">15 min drive</p></div>
+          <div class="amenity-card p-5 text-center card-hover"><i class="fa-solid fa-plane text-gold text-2xl mb-3"></i><p class="text-white text-sm font-semibold">MIA Airport</p><p class="text-gray-500 text-xs mt-1">15 min drive</p></div>
+          <div class="amenity-card p-5 text-center card-hover"><i class="fa-solid fa-water text-gold text-2xl mb-3"></i><p class="text-white text-sm font-semibold">River Walk</p><p class="text-gray-500 text-xs mt-1">Direct access</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 px-6 bg-surface/50">
+  <div class="max-w-site mx-auto text-center animate-in">
+    <div class="gold-line mx-auto mb-6"></div>
+    <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Experience Flagler on the River</h2>
+    <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">Schedule a personal tour and discover Downtown Miami's premier riverfront address.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:3053291111" class="px-10 py-4 bg-gold text-midnight font-bold rounded-full hover:bg-gold-light transition text-lg pulse-cta">Call (305) 329-1111</a>
+      <a href="brochure.pdf" target="_blank" class="px-10 py-4 border border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-midnight transition text-lg">Download Brochure</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-site mx-auto grid md:grid-cols-2 gap-16">
+    <div class="animate-in">
+      <div class="gold-line mb-6"></div>
+      <p class="text-gold font-display italic text-lg mb-2">Get in Touch</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-8">Schedule Your<br>Personal Tour</h2>
+      <div class="space-y-6">
+        <a href="tel:3053291111" class="flex items-center gap-4 text-lg text-white hover:text-gold transition"><div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center"><i class="fa-solid fa-phone text-gold"></i></div>(305) 329-1111</a>
+        <a href="mailto:info@flaglerontheriver.com" class="flex items-center gap-4 text-lg text-white hover:text-gold transition"><div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center"><i class="fa-solid fa-envelope text-gold"></i></div>info@flaglerontheriver.com</a>
+        <div class="flex items-center gap-4 text-lg"><div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center"><i class="fa-solid fa-location-dot text-gold"></i></div><div><p class="text-white">340 West Flagler Street</p><p class="text-gray-400">Miami, FL 33130</p></div></div>
+      </div>
+    </div>
+    <div class="animate-in delay-2">
+      <form class="bg-midnight-light border border-gold/10 rounded-xl p-8 space-y-5" onsubmit="handleContact(event)">
+        <h3 class="text-white font-semibold text-lg mb-2">Request Information</h3>
+        <input type="text" placeholder="Your Name *" required class="w-full bg-midnight/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
+        <input type="email" placeholder="Email Address *" required class="w-full bg-midnight/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
+        <input type="tel" placeholder="Phone Number" class="w-full bg-midnight/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition">
+        <select class="w-full bg-midnight/50 border border-white/10 rounded-lg px-4 py-3 text-gray-400 focus:border-gold focus:outline-none transition">
+          <option>I'm interested in...</option><option>1 Bedroom</option><option>2 Bedrooms</option><option>3 Bedrooms</option><option>General Information</option>
+        </select>
+        <textarea placeholder="Additional Message" rows="3" class="w-full bg-midnight/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition resize-none"></textarea>
+        <button type="submit" class="w-full py-3.5 bg-gold text-midnight font-bold rounded-full hover:bg-gold-light transition text-lg">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="py-12 px-6 border-t border-white/5">
+  <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="text-center md:text-left">
+      <img src="images/logo.png" alt="Flagler on the River" class="h-7 mb-3 mx-auto md:mx-0">
+      <p class="text-gray-500 text-sm">340 West Flagler Street, Miami FL 33130 · (305) 329-1111</p>
+      <p class="text-gray-600 text-xs mt-2">© <span id="year"></span> Flagler on the River. All Rights Reserved.</p>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.facebook.com/FlaglerontheRiver/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold/20 hover:text-gold transition text-gray-400"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://twitter.com/FlagleronRiver" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold/20 hover:text-gold transition text-gray-400"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+    <p class="text-gray-600 text-xs">Website by <a href="https://crrelabs.com" class="text-gray-500 hover:text-gold transition">CRRE Labs</a></p>
+  </div>
+</footer>
+
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-gold p-3 text-center hidden mobile-phone-bar md:hidden">
+  <a href="tel:3053291111" class="text-midnight font-bold text-lg tracking-wider flex items-center justify-center gap-2 w-full"><i class="fa-solid fa-phone"></i> Call (305) 329-1111</a>
+</div>
+
+<div id="lightbox" class="lightbox">
+  <button class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition z-10">&times;</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+var header=document.getElementById('header');
+window.addEventListener('scroll',function(){header.classList.toggle('scrolled',window.scrollY>60)});
+var menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',function(){mobileMenu.classList.toggle('open');menuBtn.innerHTML=mobileMenu.classList.contains('open')?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>'});
+mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mobileMenu.classList.remove('open');menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>'})});
+document.body.classList.add('js-animate');
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.animate-in').forEach(function(el){observer.observe(el)});
+var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+function openLB(e){e=e||window.event;if(e.stopPropagation)e.stopPropagation();if(e.preventDefault)e.preventDefault();var el=e.currentTarget||e.target;var src=el.tagName==='IMG'?el.src:(el.querySelector('img')||{}).src;if(!src)return;lbImg.src=src;lb.classList.add('active');document.body.style.overflow='hidden'}
+function closeLightbox(){lb.classList.remove('active');document.body.style.overflow=''}
+lb.addEventListener('click',closeLightbox);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+document.querySelectorAll('.gallery-item img, .lb-click').forEach(function(img){img.style.cursor='pointer';img.addEventListener('click',openLB);img.addEventListener('touchend',function(e){e.preventDefault();openLB(e)})});
+function handleContact(e){e.preventDefault();var name=e.target.querySelector('input[type="text"]').value;window.location.href='mailto:info@flaglerontheriver.com?subject=Tour Request from '+encodeURIComponent(name)}
+</script>
+</body>
+</html>
